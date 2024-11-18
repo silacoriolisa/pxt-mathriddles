@@ -1,3 +1,6 @@
+/**
+ * Allows to ask simple math questions for your youngster to practice
+ */
 
 //%block = "Math Riddles"
 namespace MathRiddle{
@@ -7,7 +10,7 @@ namespace MathRiddle{
         result: number;
         answer: number;
  
-        //%block = "Create a riddle in %myRiddle"
+        //%block = "Create a riddle in $this"
         askRiddle(): void{
             let mathOp = randOp();
             let operator, opA, opB;
@@ -36,17 +39,17 @@ namespace MathRiddle{
             this.riddle = (convertToText(opA) + operator + convertToText(opB));
         }
 
-        //%block = "Show %myRiddle"
+        //%block = "Show $this"
         showRiddle(): void{
             basic.showString(this.riddle); //"?" is automatically displayed when requested for inputs
         }
 
-        //%block = "Show answer to %myRiddle"
+        //%block = "Show answer to $this"
         showAnswer(): void{
             basic.showString(convertToText(this.answer));
         }
 
-        //%block = "Check answer to %myRiddle"
+        //%block = "Check answer to $this"
         checkAsnwer(): boolean{
             if(this.answer = this.result){
                 return true
@@ -55,7 +58,7 @@ namespace MathRiddle{
             }
         }
 
-        //%block = "Wait for a reply to %myRiddle"
+        //%block = "Wait for a reply to $this"
         getReply(): void{
         let tens, ones, result = 0;
 
