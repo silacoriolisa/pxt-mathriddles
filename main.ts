@@ -4,7 +4,7 @@
 namespace MathRiddle{
 
 
-    //block = "Ask a riddle"
+    //%block = "Ask a riddle"
     export function askRiddle(): void{
 
         let mathOp = randOp()
