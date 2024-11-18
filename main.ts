@@ -54,15 +54,12 @@ namespace MathRiddle{
 
         //%block = "Check answer to |$this"
         //%this.defl = myRiddle
-        checkAsnwer(): number{
-        /*
+        checkAsnwer(): boolean{
             if(this.answer == this.result){
                 return true
             }else{
                 return false
             }
-        */
-        return this.answer
         }
 
         //%block = "Wait for a reply to |$this"
@@ -74,7 +71,7 @@ namespace MathRiddle{
         basic.pause(200);
         ones = this.updateReply(ones);
         
-        this.result = tens * 10 + ones;
+        this.answer = tens * 10 + ones;
         }
 
         private updateReply(value: number): number{
