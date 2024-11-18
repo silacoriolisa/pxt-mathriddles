@@ -38,7 +38,7 @@ namespace MathRiddle{
 
         //%block = "Show %myRiddle"
         showRiddle(): void{
-            basic.showString(this.riddle + "?");
+            basic.showString(this.riddle); //"?" is automatically displayed when requested for inputs
         }
 
         //%block = "Show answer to %myRiddle"
