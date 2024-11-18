@@ -1,6 +1,6 @@
 
-
-//block = "Math Riddles"
+//% color="#AA278D" weight=100
+//% block = "Math Riddles"
 namespace MathRiddle{
 
 
