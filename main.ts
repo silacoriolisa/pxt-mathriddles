@@ -13,14 +13,17 @@ namespace MathRiddle{
                 opA = randint(1, 15)
                 opB = randint(1, 15)
                 operator = "+"
+                break
             case 2:
                 opA = randint(1, 15)
                 opB = randint(1, opA)
                 operator = "-"
+                break
             case 3:
                 opA = randint(1, 10)
                 opB = randint(1, (10 - opA + 1))
                 operator = "*"
+                break
             case 4:
                 
         }
