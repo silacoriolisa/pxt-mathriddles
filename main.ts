@@ -83,6 +83,8 @@ namespace MathRiddle{
                     }
                 }
             }
+            basic.showArrow(ArrowNames.East)
+            //basic.clearScreen()
             return value
         }
 
