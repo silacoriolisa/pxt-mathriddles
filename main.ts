@@ -56,9 +56,9 @@ namespace MathRiddle{
         //%this.defl = myRiddle
         checkAsnwer(): boolean{
             if(this.answer == this.result){
-                return true
+                return true;
             }else{
-                return false
+                return false;
             }
         }
 
