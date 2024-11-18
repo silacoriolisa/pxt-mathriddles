@@ -34,15 +34,17 @@ namespace MathRiddle{
         basic.showString(convertToText(opA) + operator + convertToText(opB))
         basic.showString("?")
         basic.pause(500)
+        basic.clearScreen()
         return result
 
     }
 
     //%block = "Wait for reply"
     export function waitForReply(): number{
-        basic.clearScreen()
         let tens, ones, result = 0
+           
         while (!(input.buttonIsPressed(Button.A) && input.buttonIsPressed(Button.B))) {
+            basic.showNumber(tens)
             if(input.buttonIsPressed(Button.A)){
                 if( tens < 9 ){
                     tens++
@@ -56,9 +58,9 @@ namespace MathRiddle{
                     tens = 9
                 }
             }
-            basic.showNumber(tens)
         }
         while (!(input.buttonIsPressed(Button.A) && input.buttonIsPressed(Button.B))) {
+            basic.showNumber(ones)
             if (input.buttonIsPressed(Button.A)) {
                 if (ones < 9) {
                     ones++
@@ -66,12 +68,11 @@ namespace MathRiddle{
                     ones = 0
                 }
             }else if (input.buttonIsPressed(Button.B)) {
-            if (ones > 0) {
-                ones--
-            } else {
-                ones = 9
-            }
-            basic.showNumber(ones)
+                if (ones > 0) {
+                    ones--
+                } else {
+                    ones = 9
+                }            
             }
         }
         result = tens * 10 + ones
