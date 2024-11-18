@@ -86,9 +86,9 @@ namespace MathRiddle{
                     }
                 }
             }
-            basic.showArrow(ArrowNames.East)
+            basic.showArrow(ArrowNames.East);
             //basic.clearScreen()
-            return value
+            return value;
         }
 
     //end of class definition
@@ -97,7 +97,7 @@ namespace MathRiddle{
     function randOp(): number{
         // 1:"+", 2:"-", 3:"*", 4:"/"
         //Division needs to be thought through
-        return randint(1, 3)
+        return randint(1, 3);
     }
 
     //% block="NewRiddle"
