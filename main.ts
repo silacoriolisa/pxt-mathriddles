@@ -2,11 +2,11 @@
  * Allows to ask simple math questions for your youngster to practice
  */
 
-//%block = "Math Riddles"
+//%block = "Math Riddles" weight = 100
 namespace MathRiddle{
 
     export class Riddle{
-        riddle: string;
+        riddletxt: string;
         result: number;
         answer: number;
  
@@ -36,12 +36,12 @@ namespace MathRiddle{
                     break;
                 case 4:
             }
-            this.riddle = (convertToText(opA) + operator + convertToText(opB));
+            this.riddletxt = (convertToText(opA) + operator + convertToText(opB));
         }
 
         //%block = "Show $this"
         showRiddle(): void{
-            basic.showString(this.riddle); //"?" is automatically displayed when requested for inputs
+            basic.showString(this.riddletxt); //"?" is automatically displayed when requested for inputs
         }
 
         //%block = "Show answer to $this"
@@ -104,7 +104,7 @@ namespace MathRiddle{
     //% blockSetVariable=myRiddle
     export function createMyRiddle(): Riddle {
         let myRiddle = new Riddle();
-        myRiddle.riddle = "";
+        myRiddle.riddletxt = "";
         myRiddle.result = 0;
         myRiddle.answer = 0;
         return myRiddle;
