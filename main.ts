@@ -32,34 +32,50 @@ namespace MathRiddle{
         }
         //show riddle
         basic.showString(convertToText(opA) + operator + convertToText(opB))
+        basic.showString("?")
+        basic.pause(500)
         return result
 
     }
 
     //%block = "Wait for reply"
     export function waitForReply(): number{
+        basic.clearScreen()
         let tens, ones, result = 0
         while (!(input.buttonIsPressed(Button.A) && input.buttonIsPressed(Button.B))) {
             if(input.buttonIsPressed(Button.A)){
-                led.stopAnimation()
                 if( tens < 9 ){
                     tens++
                 }else{
                     tens = 0
                 }
+            }else if(input.buttonIsPressed(Button.B)){
+                if (tens > 0) {
+                    tens--
+                } else {
+                    tens = 9
+                }
             }
-
-            if (input.buttonIsPressed(Button.B)) {
-                led.stopAnimation()
+            basic.showNumber(tens)
+        }
+        while (!(input.buttonIsPressed(Button.A) && input.buttonIsPressed(Button.B))) {
+            if (input.buttonIsPressed(Button.A)) {
                 if (ones < 9) {
                     ones++
                 } else {
                     ones = 0
                 }
+            }else if (input.buttonIsPressed(Button.B)) {
+            if (ones > 0) {
+                ones--
+            } else {
+                ones = 9
             }
-            result = tens * 10 + ones
-            basic.showNumber(result)
+            basic.showNumber(ones)
+            }
         }
+        result = tens * 10 + ones
+        basic.showNumber(result)
         return result
     }
 
