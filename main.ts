@@ -54,12 +54,15 @@ namespace MathRiddle{
 
         //%block = "Check answer to |$this"
         //%this.defl = myRiddle
-        checkAsnwer(): boolean{
+        checkAsnwer(): number{
+        /*
             if(this.answer == this.result){
                 return true
             }else{
                 return false
             }
+        */
+        return this.answer
         }
 
         //%block = "Wait for a reply to |$this"
@@ -96,8 +99,7 @@ namespace MathRiddle{
             return value;
         }
 
-    //end of class definition
-    }
+    }//end of class
 
     function randOp(): number{
         // 1:"+", 2:"-", 3:"*", 4:"/"
