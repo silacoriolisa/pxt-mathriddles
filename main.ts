@@ -54,7 +54,7 @@ namespace MathRiddle{
 
         //%block = "Check answer to |$this"
         checkAsnwer(): boolean{
-            if(this.answer = this.result){
+            if(this.answer == this.result){
                 return true
             }else{
                 return false
