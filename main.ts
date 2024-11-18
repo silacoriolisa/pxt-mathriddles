@@ -1,8 +1,10 @@
 /**
- * Allows to ask simple math questions for your youngster to practice
+ * A math learning helper
+ *
  */
 
-//%block = "Math Riddles" weight = 100
+
+//%block="Math Riddle"
 namespace MathRiddle{
 
     
