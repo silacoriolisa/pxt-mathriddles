@@ -1,13 +1,9 @@
 /**
  * A math learning helper
- *
  */
-
 
 //%block="Math Riddle"
 namespace MathRiddle{
-
-    
 
     export class Riddle{
         riddletxt: string;
@@ -45,16 +41,19 @@ namespace MathRiddle{
         }
 
         //%block = "Show |$this"
+        //%this.defl = myRiddle
         showRiddle(): void{
             basic.showString(this.riddletxt); //"?" is automatically displayed when requested for inputs
         }
 
         //%block = "Show answer to |$this"
+        //%this.defl = myRiddle
         showAnswer(): void{
             basic.showString(convertToText(this.answer));
         }
 
         //%block = "Check answer to |$this"
+        //%this.defl = myRiddle
         checkAsnwer(): boolean{
             if(this.answer == this.result){
                 return true
@@ -64,6 +63,7 @@ namespace MathRiddle{
         }
 
         //%block = "Wait for a reply to |$this"
+        //%this.defl = myRiddle
         getReply(): void{
         let tens, ones, result = 0;
 
@@ -92,7 +92,6 @@ namespace MathRiddle{
                 }
             }
             basic.showArrow(ArrowNames.East);
-            //basic.clearScreen()
             return value;
         }
 
