@@ -76,7 +76,7 @@ namespace MathRiddle{
 
         private updateReply(value: number): number{
             while (!(input.buttonIsPressed(Button.A) && input.buttonIsPressed(Button.B))) {
-                basic.showNumber(value);
+                
                 if (input.buttonIsPressed(Button.A)) {
                     if (value < 9) {
                         value++;
@@ -90,6 +90,7 @@ namespace MathRiddle{
                         value = 9;
                     }
                 }
+                basic.showNumber(value);
             }
             basic.showArrow(ArrowNames.East);
             return value;
