@@ -1,5 +1,5 @@
 
-//% color="#AA278D" weight=100 block="Math Riddles"
+//%block = "Math Riddles"
 namespace MathRiddle{
 
     export class Riddle{
@@ -44,6 +44,15 @@ namespace MathRiddle{
         //%block = "Show answer to %myRiddle"
         showAnswer(): void{
             basic.showString(convertToText(this.answer));
+        }
+
+        //%block = "Check answer to %myRiddle"
+        checkAsnwer(): boolean{
+            if(this.answer = this.result){
+                return true
+            }else{
+                return false
+            }
         }
 
         //%block = "Wait for a reply to %myRiddle"
@@ -97,5 +106,3 @@ namespace MathRiddle{
     }
 
 }
-
-
