@@ -1,8 +1,3 @@
-/**
- * A math learning helper
- */
-
-//%block="Math Riddle"
 namespace MathRiddle{
 
     export class Riddle{
@@ -36,6 +31,14 @@ namespace MathRiddle{
                     this.result = opA * opB;
                     break;
                 case 4:
+                    opA = randint(1, 30);
+                    opB = randint(1, 10);                    
+                    while (opA % opB != 0) {
+                        opA = randint(1, 30);
+                        opB = randint(1, 10);
+                    }
+                    this.result = opA / opB;
+                    break;
             }
             this.riddletxt = (convertToText(opA) + operator + convertToText(opB));
         }
@@ -101,7 +104,7 @@ namespace MathRiddle{
     function randOp(): number{
         // 1:"+", 2:"-", 3:"*", 4:"/"
         //Division needs to be thought through
-        return randint(1, 3);
+        return randint(1, 4);
     }
 
     //% block="newRiddle"
