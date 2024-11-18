@@ -5,12 +5,15 @@
 //%block = "Math Riddles" weight = 100
 namespace MathRiddle{
 
+    
+
     export class Riddle{
         riddletxt: string;
         result: number;
         answer: number;
  
-        //%block = "Create a riddle in $this"
+        //%block = "Create a riddle in |$this"
+        //%this.defl = myRiddle
         askRiddle(): void{
             let mathOp = randOp();
             let operator, opA, opB;
@@ -39,17 +42,17 @@ namespace MathRiddle{
             this.riddletxt = (convertToText(opA) + operator + convertToText(opB));
         }
 
-        //%block = "Show $this"
+        //%block = "Show |$this"
         showRiddle(): void{
             basic.showString(this.riddletxt); //"?" is automatically displayed when requested for inputs
         }
 
-        //%block = "Show answer to $this"
+        //%block = "Show answer to |$this"
         showAnswer(): void{
             basic.showString(convertToText(this.answer));
         }
 
-        //%block = "Check answer to $this"
+        //%block = "Check answer to |$this"
         checkAsnwer(): boolean{
             if(this.answer = this.result){
                 return true
@@ -58,7 +61,7 @@ namespace MathRiddle{
             }
         }
 
-        //%block = "Wait for a reply to $this"
+        //%block = "Wait for a reply to |$this"
         getReply(): void{
         let tens, ones, result = 0;
 
@@ -100,7 +103,7 @@ namespace MathRiddle{
         return randint(1, 3);
     }
 
-    //% block="NewRiddle"
+    //% block="newRiddle"
     //% blockSetVariable=myRiddle
     export function createMyRiddle(): Riddle {
         let myRiddle = new Riddle();
