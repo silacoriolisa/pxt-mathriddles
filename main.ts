@@ -33,10 +33,11 @@ namespace MathRiddle{
                 case 4:
                     opA = randint(1, 30);
                     opB = randint(1, 10);                    
-                    while (opA % opB != 0) {
+                    while(opA % opB != 0) {
                         opA = randint(1, 30);
                         opB = randint(1, 10);
                     }
+                    operator = "/";
                     this.result = opA / opB;
                     break;
             }
