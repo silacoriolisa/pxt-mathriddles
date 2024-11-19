@@ -47,6 +47,7 @@ namespace MathRiddle{
                         opA = randint(1, 30);
                         opB = randint(1, 10);
                     }
+                    operator = "/";
                     this.result = opA / opB;
                     break;
             }
