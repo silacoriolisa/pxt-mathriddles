@@ -71,7 +71,15 @@ namespace MathRiddle{
          */
         //%blockId=display_puzzle_text block="%myRiddle|Display puzzle text"
         public showRiddle(): void{
-            basic.showString(this.riddletxt); //"?" is automatically displayed when requested for inputs
+            basic.showString(this.riddletxt); 
+        }
+        /**
+         * Display the puzzle score
+         * @param this the myRiddle content to show
+         */
+        //%blockId=display_puzzle_score block="%myRiddle|Get puzzle score"
+        public getScore(): boolean {
+            return this.score;
         }
 
         /**
