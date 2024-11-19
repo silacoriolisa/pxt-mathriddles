@@ -1,6 +1,13 @@
 //%block="Math Riddle"
 namespace MathRiddle{
 
+    export enum PuzzleBlockProperty {
+        //% block=Y
+        Y,
+        //% block=N
+        N
+    }
+
     export class Riddle{
         private riddletxt: string;
         private result: number;
@@ -109,6 +116,24 @@ namespace MathRiddle{
             this.askRiddle();
             this.showRiddle();
             this.getReply();
+            return this.checkAsnwer();
+        }
+
+           //%block="%myRiddle|Puzzle to solve, repeat %PuzzleBlockProperty"
+        public puzzleBlock(repeat: PuzzleBlockProperty): boolean {
+            if(repeat = PuzzleBlockProperty.Y){
+                    this.askRiddle()
+            }
+            this.showRiddle();
+            this.getReply();
+            if (this.checkAsnwer()) {
+                basic.showIcon(IconNames.Heart)
+            } else {
+                basic.showIcon(IconNames.No)
+            }
+            basic.pause(1000);
+            basic.clearScreen()
+            basic.pause(300);
             return this.checkAsnwer();
         }
 
