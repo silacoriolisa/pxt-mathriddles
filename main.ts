@@ -5,8 +5,7 @@ namespace MathRiddle{
         private result: number;
         private answer: number;
  
-        //%block = "Create a riddle in |$this"
-        //%this.defl = myRiddle
+        //%block = "Create a riddle in |$this.myRiddle"
         public askRiddle(): void{
             let mathOp = randOp();
             let operator, opA, opB;
