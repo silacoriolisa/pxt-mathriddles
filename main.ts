@@ -1,3 +1,4 @@
+//%block="Math Riddle"
 namespace MathRiddle{
 
     export class Riddle{
@@ -5,7 +6,17 @@ namespace MathRiddle{
         private result: number;
         private answer: number;
  
-        //%block = "Create a riddle in |$this.myRiddle"
+        constructor (riddletxt: string, result: number, answer: number){
+            this.riddletxt = riddletxt;
+            this.result = result;
+            this.answer = answer;
+        }
+
+        /**
+         * Create a new riddle
+         * @param this the myRiddle content to regenerate
+         */
+        //%blockId=create_new_riddle block="%myRiddle|Create a new puzzle to solve"
         public askRiddle(): void{
             let mathOp = randOp();
             let operator, opA, opB;
@@ -42,20 +53,29 @@ namespace MathRiddle{
             this.riddletxt = (convertToText(opA) + operator + convertToText(opB));
         }
 
-        //%block = "Show |$this"
-        //%this.defl = myRiddle
+        /**
+         * Display the puzzle test
+         * @param this the myRiddle content to show
+         */
+        //%blockId=display_puzzle_text block="%myRiddle|Display puzzle text"
         public showRiddle(): void{
             basic.showString(this.riddletxt); //"?" is automatically displayed when requested for inputs
         }
 
-        //%block = "Show answer to |$this"
-        //%this.defl = myRiddle
+        /**
+         * Display the answer provided by the User
+         * @param this the myRiddle content to show
+         */
+        //%blockId=display_puzzle_answer block="%myRiddle|Display User answer"
         public showAnswer(): void{
             basic.showString(convertToText(this.answer));
         }
 
-        //%block = "Check answer to |$this"
-        //%this.defl = myRiddle
+        /**
+         * Check the answer provided by the User
+         * @param this the myRiddle content to verify
+         */
+        //%blockId=check_puzzle_answer block="%myRiddle|Check User answer"
         public checkAsnwer(): boolean{
             if(this.answer == this.result){
                 return true;
@@ -64,8 +84,11 @@ namespace MathRiddle{
             }
         }
 
-        //%block = "Wait for a reply to |$this"
-        //%this.defl = myRiddle
+        /**
+         * Get the answer provided by the User
+         * @param this the myRiddle to save User answer to
+         */
+        //%blockId=get_puzzle_answer block="%myRiddle|Get User answer"
        public getReply(): void{
         let tens, ones, result = 0;
 
@@ -100,6 +123,8 @@ namespace MathRiddle{
 
     }//end of class
 
+    export let myRiddle: Riddle
+
     function randOp(): number{
         // 1:"+", 2:"-", 3:"*", 4:"/"
         //Division needs to be thought through
@@ -109,8 +134,8 @@ namespace MathRiddle{
     //% block="newRiddle"
     //% blockSetVariable=myRiddle
     export function createMyRiddle(): Riddle {
-        let myRiddle = new Riddle();
-        return myRiddle;
+        let myRiddle2 = new Riddle("no text",0,0);
+        return myRiddle2;
     }
 
 }
