@@ -12,12 +12,14 @@ namespace MathRiddle{
         private riddletxt: string;
         private result: number;
         private answer: number;
+        private score: boolean;
         private init: boolean;
  
-        constructor (riddletxt: string, result: number, answer: number, init: boolean){
+        constructor (riddletxt: string, result: number, answer: number,score:boolean, init: boolean){
             this.riddletxt = riddletxt;
             this.result = result;
             this.answer = answer;
+            this.score = score;
             this.init = init;
         }
 
@@ -88,10 +90,11 @@ namespace MathRiddle{
         //%blockId=check_puzzle_answer block="%myRiddle|Check User answer"
         public checkAsnwer(): boolean{
             if(this.answer == this.result){
-                return true;
+                this.score = true;
             }else{
-                return false;
+                this.score = false;
             }
+            return this.score
         }
 
         /**
@@ -118,7 +121,8 @@ namespace MathRiddle{
             this.askRiddle();
             this.showRiddle();
             this.getReply();
-            return this.checkAsnwer();
+            this.checkAsnwer()
+            return this.score;
         }
 
         /**
@@ -178,7 +182,7 @@ namespace MathRiddle{
     //% block="newRiddle"
     //% blockSetVariable=myRiddle
     export function createMyRiddle(): Riddle {
-        let myRiddle = new Riddle("no text",0,0,false);
+        let myRiddle = new Riddle("no text",0,0,false,false);
         return myRiddle;
     }
 
