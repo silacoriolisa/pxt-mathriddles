@@ -1,13 +1,13 @@
 namespace MathRiddle{
 
     export class Riddle{
-        riddletxt: string;
-        result: number;
-        answer: number;
+        private riddletxt: string;
+        private result: number;
+        private answer: number;
  
         //%block = "Create a riddle in |$this"
         //%this.defl = myRiddle
-        askRiddle(): void{
+        public askRiddle(): void{
             let mathOp = randOp();
             let operator, opA, opB;
 
@@ -37,7 +37,6 @@ namespace MathRiddle{
                         opA = randint(1, 30);
                         opB = randint(1, 10);
                     }
-                    operator = "/";
                     this.result = opA / opB;
                     break;
             }
@@ -46,19 +45,19 @@ namespace MathRiddle{
 
         //%block = "Show |$this"
         //%this.defl = myRiddle
-        showRiddle(): void{
+        public showRiddle(): void{
             basic.showString(this.riddletxt); //"?" is automatically displayed when requested for inputs
         }
 
         //%block = "Show answer to |$this"
         //%this.defl = myRiddle
-        showAnswer(): void{
+        public showAnswer(): void{
             basic.showString(convertToText(this.answer));
         }
 
         //%block = "Check answer to |$this"
         //%this.defl = myRiddle
-        checkAsnwer(): boolean{
+        public checkAsnwer(): boolean{
             if(this.answer == this.result){
                 return true;
             }else{
@@ -68,7 +67,7 @@ namespace MathRiddle{
 
         //%block = "Wait for a reply to |$this"
         //%this.defl = myRiddle
-        getReply(): void{
+       public getReply(): void{
         let tens, ones, result = 0;
 
         tens = this.updateReply(tens);
@@ -112,9 +111,6 @@ namespace MathRiddle{
     //% blockSetVariable=myRiddle
     export function createMyRiddle(): Riddle {
         let myRiddle = new Riddle();
-        myRiddle.riddletxt = "";
-        myRiddle.result = 0;
-        myRiddle.answer = 0;
         return myRiddle;
     }
 
