@@ -99,6 +99,18 @@ namespace MathRiddle{
         this.answer = tens * 10 + ones;
         }
 
+        /**
+         * Complete puzzle workflow in one block
+         * @param this the myRiddle to show, answer and veriy
+         */
+        //%blockId=puzzle_workflow block="%myRiddle|Test yourself!"
+        public completePuzzleWorkflow(): boolean {
+            this.askRiddle();
+            this.showRiddle();
+            this.getReply();
+            return this.checkAsnwer();
+        }
+
         private updateReply(value: number): number{
             while (!(input.buttonIsPressed(Button.A) && input.buttonIsPressed(Button.B))) {
                 
