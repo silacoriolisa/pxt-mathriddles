@@ -140,7 +140,12 @@ namespace MathRiddle{
         //%block="%myRiddle|Puzzle to solve, repeat %PuzzleBlockProperty"
         public puzzleBlock(repeat: PuzzleBlockProperty): void {
 
-            if(repeat == PuzzleBlockProperty.Y && !this.init){
+            if(!this.init){
+                this.askRiddle();
+                this.init = true;
+            }
+
+            if(repeat == PuzzleBlockProperty.Y && this.score){
                     this.askRiddle()
             }
             this.showRiddle();
