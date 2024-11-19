@@ -12,11 +12,13 @@ namespace MathRiddle{
         private riddletxt: string;
         private result: number;
         private answer: number;
+        private init: boolean;
  
-        constructor (riddletxt: string, result: number, answer: number){
+        constructor (riddletxt: string, result: number, answer: number, init: boolean){
             this.riddletxt = riddletxt;
             this.result = result;
             this.answer = answer;
+            this.init = init;
         }
 
         /**
@@ -119,9 +121,14 @@ namespace MathRiddle{
             return this.checkAsnwer();
         }
 
-           //%block="%myRiddle|Puzzle to solve, repeat %PuzzleBlockProperty"
-        public puzzleBlock(repeat: PuzzleBlockProperty): boolean {
-            if(repeat = PuzzleBlockProperty.Y){
+        /**
+         * Complete puzzle workflow in one block with repetition and result evaluation
+         * @param this the myRiddle to show, answer and veriy
+         */
+        //%block="%myRiddle|Puzzle to solve, repeat %PuzzleBlockProperty"
+        public puzzleBlock(repeat: PuzzleBlockProperty): void {
+
+            if(repeat == PuzzleBlockProperty.Y && !this.init){
                     this.askRiddle()
             }
             this.showRiddle();
@@ -134,7 +141,6 @@ namespace MathRiddle{
             basic.pause(1000);
             basic.clearScreen()
             basic.pause(300);
-            return this.checkAsnwer();
         }
 
         private updateReply(value: number): number{
@@ -172,8 +178,8 @@ namespace MathRiddle{
     //% block="newRiddle"
     //% blockSetVariable=myRiddle
     export function createMyRiddle(): Riddle {
-        let myRiddle2 = new Riddle("no text",0,0);
-        return myRiddle2;
+        let myRiddle = new Riddle("no text",0,0,false);
+        return myRiddle;
     }
 
 }
