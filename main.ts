@@ -1,4 +1,5 @@
-//%block="Math Riddle"
+//%block="Math Riddle" blockId=math_riddle_namespace 
+//%color="#31ba0f"
 namespace MathRiddle{
 
     export enum PuzzleBlockProperty {
@@ -151,7 +152,7 @@ namespace MathRiddle{
             this.showRiddle();
             this.getReply();
             if (this.checkAsnwer()) {
-                basic.showIcon(IconNames.Heart)
+                basic.showIcon(IconNames.Yes)
             } else {
                 basic.showIcon(IconNames.No)
             }
