@@ -149,16 +149,20 @@ namespace MathRiddle{
                 if(repeat == PuzzleBlockProperty.Y && this.score){
                         this.askRiddle()
                 }
+                basic.clearScreen()
+                basic.pause(200);
                 this.showRiddle();
                 this.getReply();
                 if (this.checkAsnwer()) {
                     basic.showIcon(IconNames.Yes)
+                    basic.pause(200);
                     break;
                 } else {
                     basic.showIcon(IconNames.No)
+                    basic.pause(200);
                 }
             }
-            basic.pause(1000);
+            basic.pause(800);
             basic.clearScreen()
             basic.pause(300);
         }
