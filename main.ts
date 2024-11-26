@@ -145,16 +145,18 @@ namespace MathRiddle{
                 this.askRiddle();
                 this.init = true;
             }
-
-            if(repeat == PuzzleBlockProperty.Y && this.score){
-                    this.askRiddle()
-            }
-            this.showRiddle();
-            this.getReply();
-            if (this.checkAsnwer()) {
-                basic.showIcon(IconNames.Yes)
-            } else {
-                basic.showIcon(IconNames.No)
+            while(1){
+                if(repeat == PuzzleBlockProperty.Y && this.score){
+                        this.askRiddle()
+                }
+                this.showRiddle();
+                this.getReply();
+                if (this.checkAsnwer()) {
+                    basic.showIcon(IconNames.Yes)
+                    break;
+                } else {
+                    basic.showIcon(IconNames.No)
+                }
             }
             basic.pause(1000);
             basic.clearScreen()
